@@ -1,4 +1,3 @@
-// list of post
 let post = [];
 let isSeeMore = true;
 document.getElementById('tools-container').innerHTML = `
@@ -143,7 +142,7 @@ const displayToolDetails = tool => {
   
   
   <div>
-  <span class="badge text-bg-success w-50 h-50 ">${tool.accuracy.score}<span>%</span>Accuracy</span>
+  <span class="badge text-bg-danger w-50 h-50 ">${tool.accuracy.score}<span>%</span>Accuracy</span>
   <img src=${tool.image_link[0]} class="card-img-top"  alt="...">
  </div>
   <div class="card-body text-center">
