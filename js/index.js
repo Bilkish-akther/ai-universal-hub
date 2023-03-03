@@ -1,3 +1,4 @@
+// list of post
 let post = [];
 let isSeeMore = true;
 document.getElementById('tools-container').innerHTML = `
@@ -15,11 +16,12 @@ const loadData = async () => {
             post = data.data;
             document.getElementById("spinner").remove();
             displayTools(post.tools.slice(0, 6));
+           
         });
     }, 1000);
 
 }
-
+//
 
 const displayTools = tools => {
     const toolsContainer = document.getElementById('tools-container');
@@ -37,14 +39,14 @@ const displayTools = tools => {
 
           <div>
     
-        <ul>
+        <ol>
 
-          <li>${tool.features['1'] ? tool.features['1'] : 'Data not found'}</li>
-          <li>${tool.features['2'] ? tool.features['2'] : 'Data not found'}</li>
-          <li>${tool.features['3'] ? tool.features['3'] : 'Data not found'}</li>
+       ${tool.features['1'] ?` <li>${tool.features['1']} </li>`:''}
+       ${tool.features['2'] ?` <li>${tool.features['2']} </li>`:''}
+       ${tool.features['3'] ?` <li>${tool.features['3']} </li>`:''}
 
         
-        </ul>
+        </ol>
         </div>
          
            
@@ -73,18 +75,22 @@ const displayTools = tools => {
 
 
 const showToolsDetail = id => {
+
     let url = `https://openapi.programming-hero.com/api/ai/tool/${id}`
     console.log(url);
 
     fetch(url)
         .then((res) => res.json())
         .then((data) => displayToolDetails(data.data));
+
+        
 }
 
 
 
 const displayToolDetails = tool => {
-    console.log(tool);
+    
+    console.log(tool.pricing);
     const toolPrice = document.getElementById('modal-body');
 
     toolPrice.innerHTML = `
@@ -100,15 +106,25 @@ const displayToolDetails = tool => {
     <div>
     <h5 class="card-title">${tool.description}</h5>
   </div>
-    
+
+  ${tool.pricing? `
   <div class="d-flex gap-2 justify-content-around my-2">
   <div class="border p-3 text-center rounded btn btn-success text-light shadow-lg ">
   <span>${tool.pricing ? tool.pricing[0].price : "No Data Found"}</span> <br> <span>${tool.pricing[0].plan}</span> </div>
   <div class="border p-3 text-center rounded btn btn-warning text-light shadow-lg text-danger">
-  <span>${(tool.pricing) ? tool.pricing[1].price : "No Data Found"}</span> <br> <span>${tool.pricing[1].plan}</span></div>
+  <span>${tool.pricing ? tool.pricing[1].price : "No Data Found"}</span> <br> <span>${tool.pricing[1].plan}</span></div>
   <div class="border p-3 text-center rounded btn btn-danger text-light shadow-lg"> 
   <span>${tool.pricing ? tool.pricing[2].price : "No Data Found"}</span> <br> <span>${tool.pricing[2].plan}</span></div>
-  </div> 
+  </div> `:
+  `<div class="d-flex gap-2 justify-content-around my-2">
+  <div class="border p-3 text-center rounded btn btn-success text-light shadow-lg ">
+  <span>0</span> </div>
+  <div class="border p-3 text-center rounded btn btn-warning text-light shadow-lg text-danger">
+  <span>0</span></div>
+  <div class="border p-3 text-center rounded btn btn-danger text-light shadow-lg"> 
+  <span>0</div>
+  </div>`
+}
   
   
   <div class="d-flex justify-content-between my-2">
@@ -124,11 +140,13 @@ const displayToolDetails = tool => {
   
   
   <h5>Integrations</h5>
+  ${tool.integrations? `
   <ul>
-    <li>${tool.integrations[0] ? tool.integrations[0] : 'Not Found'}</li>
-    <li>${tool.integrations[1] ? tool.integrations[1] : 'Not Found'}</li>
-    <li>${tool.integrations[2] ? tool.integrations[2] : 'Not Found'}</li>
+  ${tool.integrations[0] ?`<li> ${tool.integrations[0]}</li>`:""}
+  ${tool.integrations[1] ?`<li> ${tool.integrations[1]}</li>`:""}
+  ${tool.integrations[2] ?`<li> ${tool.integrations[2]}</li>`:""}
   </ul>
+  `:''}
   </div>
   </div>
   </div>
@@ -142,7 +160,8 @@ const displayToolDetails = tool => {
   
   
   <div>
-  <span class="badge text-bg-danger w-50 h-50 ">${tool.accuracy.score}<span>%</span>Accuracy</span>
+  ${tool.accuracy.score? `<span class="badge text-bg-success w-50 h-50 ">${tool.accuracy.score}<span>%</span>Accuracy</span> `:''}
+  
   <img src=${tool.image_link[0]} class="card-img-top"  alt="...">
  </div>
   <div class="card-body text-center">
@@ -195,6 +214,7 @@ document.getElementById("see_more_btn").addEventListener('click', function () {
     if (isSeeMore) {
         isSeeMore = false;
         displayTools(post.tools.slice(6, 12));
+        document.getElementById("see_more_btn").remove();
     }
 });
 //sort-by-btn
