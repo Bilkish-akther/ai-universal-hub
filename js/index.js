@@ -124,8 +124,8 @@ const displayToolDetails = tool => {
 <div class="card-body">
 
 
-<span class=" position-absolute top-0 end-0 text-bg-success w-full h-full ">${tool.accuracy.score }<span> % </span>Accuracy</span>
-<img   src=${tool.image_link[0]} class="card-img-top w-100 h-100"  alt="...">
+<span class=" position-absolute top-0 end-0 text-bg-success w-15 h-10 ">${tool.accuracy.score }<span> % </span>Accuracy</span>
+<img   src=${tool.image_link[0]} class="card-img-top w-full h-full"  alt="...">
 </div>
 
 <div class="card-body text-center">
