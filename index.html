@@ -2,69 +2,91 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Universe Hub</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/b16ff51750.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./style/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b16ff51750.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
-  <!-- start header -->
-  <header class="nevber">
-    <h2>AI Universe Hub</h2>
-    <button type="button" class="btn btn-danger mb-4">Sort By Date</button>
-  </header>
-  <!-- start header end -->
-  <!-- start main section -->
-  <main class="container">
-    <section>
-      <div id="tools-container" class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- start header -->
+    <header class="nevber">
+        <h2>AI Universe Hub</h2>
+        <button type="button" class="btn btn-danger mb-4" id="sort_by_btn">Sort By Date</button>
+    </header>
+    <!-- start header end -->
 
-      </div>
-    </section>
-
-
-
-    <!-- Modal starts-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="toolsDetailsModalLabel" aria-hidden="true">
-      <div class="modal-dialog  modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="toolsDetailsModalLabel"></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-
-          <div class=" modal-body">
-            <div class="" id="modal-body">
-
+    <main class="container">
+        <section id="section-main">
+            <div id="tools-container" class="row row-cols-1 row-cols-md-3 g-4">
 
             </div>
 
 
-          </div>
+
+        </section>
+        <button type="button" class= " btn btn-danger mb-4" id="see_more_btn">See More</button>
+
+        <!--  modal start -->
+        <!-- Button trigger modal -->
+        <!-- <button 
+type="button" 
+class="btn btn-primary" 
+
+  Launch demo modal
+</button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="toolsDetailsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="toolsDetailsModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+
+                    <div class=" modal-body">
+                        <div class="" id="modal-body">
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
 
         </div>
-      </div>
 
 
-    </div>
+        <!--  modal start end -->
 
 
-    <!--  modal start end -->
 
-  </main>
+    </main>
 
 
-  <!-- end main section -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <script src="/js/index.js"></script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
