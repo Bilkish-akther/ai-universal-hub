@@ -163,7 +163,7 @@ const displayToolDetails = tool => {
   
   
   <div>
-  ${tool.accuracy.score ? `<span class="badge text-bg-success h-70 w-50 ">${tool.accuracy.score*100}<span>%</span>Accuracy</span> ` : ''}
+  ${tool.accuracy.score ? `<span class="badge text-bg-success h-70 w-50 ">${tool.accuracy.score * 100}<span>%</span>Accuracy</span> ` : ''}
   
   <img src=${tool.image_link[0]} class="card-img-top"  alt="...">
  </div>
