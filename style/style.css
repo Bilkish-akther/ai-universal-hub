@@ -6,3 +6,17 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
+.no-data{
+    font-size: 15px;
+}
+#see-section{
+    text-align: center;
+}
+#spinner{
+    width: 500;
+}
+
+
+.modal-first-div{
+    background-color:antiquewhite;
+}
